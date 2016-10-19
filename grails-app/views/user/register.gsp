@@ -16,8 +16,8 @@
     </g:hasErrors>
     <g:form action="register" name="registerForm">
         <div class="formField">
-            <label for="login">Login:</label>
-            <g:textField name="login" value="${user?.login}"></g:textField>
+            <label for="username">Username:</label>
+            <g:textField name="username" value="${user?.username}"></g:textField>
         </div>
         <div class="formField">
             <label for="password">Password:</label>

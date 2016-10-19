@@ -6,13 +6,13 @@ class UserController {
 
     	if (request.method == 'POST') {
     		def newUser = new User()
-    		user.properties['login', 'password', 'firstName', 'lastName'] = params
+    		newUser.properties['username', 'password', 'firstName', 'lastName'] = params
 
     		if (newUser.password != params.confirm) {
     			newUser.errors.rejectValue("password", "user.password.dontmatch")
     			return [user: newUser]
     		}else if(newUser.save()){
-    			sesson.user = newUser
+    			session.user = newUser
     			redirect controller : "store"
     		}else {
     			return [user: newUser]
@@ -39,13 +39,14 @@ class UserController {
 }
 
 class LoginCommand {
-	String login
+	
+	String username
 	String password
 	private u
 
 	User getUser() {
-		if (!u && login) {
-			u = User.findByLogin(login, [fetch:[purchasedSongs: 'join']])
+		if (!u && username) {
+			u = User.findByUsername(username, [fetch:[purchasedSongs: 'join']])
 		}
 
 		return u
@@ -53,7 +54,7 @@ class LoginCommand {
 
 	static constraints = {
 
-		login blank:false, validator:{ val, obj ->
+		username blank:false, validator:{ val, obj ->
 			if (!obj.user) {
 				return "user.not.found"
 			}

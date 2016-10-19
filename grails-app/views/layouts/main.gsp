@@ -52,7 +52,7 @@
             <div>
             	Username:
             </div> 
-            <g:textField name="login" value="${fieldValue(bean:loginCmd, field:'login')}">  </g:textField>
+            <g:textField name="username" value="${fieldValue(bean:loginCmd, field:'username')}">  </g:textField>
             <div>Password:</div>
             <g:passwordField name="password"></g:passwordField>
             <br/>

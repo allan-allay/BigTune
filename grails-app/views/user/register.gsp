@@ -1,3 +1,11 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="layout" content="main">
+    <title>Big-Tunes Store : Registration</title>
+</head>
+
 <body id="body">
     <h1>Registration</h1>
     <p>Complete the form below to create an account!</p>
@@ -30,3 +38,5 @@
         <g:submitButton class="formButton" name="register" value="Register"></g:submitButton>
     </g:form>
 </body>
+
+</html>
